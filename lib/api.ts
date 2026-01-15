@@ -67,20 +67,5 @@ export const conversionApi = {
         window.URL.revokeObjectURL(url)
     },
 
-    /**
-     * List all conversions
-     */
-    listConversions: async (skip = 0, limit = 50): Promise<Conversion[]> => {
-        const response = await api.get<Conversion[]>('/api/conversions/', {
-            params: { skip, limit },
-        })
-        return response.data
-    },
 
-    /**
-     * Delete conversion
-     */
-    deleteConversion: async (id: string): Promise<void> => {
-        await api.delete(`/api/conversions/${id}/`)
-    },
 }
